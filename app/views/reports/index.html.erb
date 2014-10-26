@@ -1,0 +1,11 @@
+<h2>List of orders:</h2>
+
+<% if @orders.empty? %>
+  <p>There are no orders</p>
+<% else %>
+  <ul>
+    <% @orders.each do |order| %>
+      <li><%= link_to "Order no. #{order.id}", order %></li>
+    <% end %>
+  </ul>
+<% end %>
