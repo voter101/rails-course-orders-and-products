@@ -1,0 +1,17 @@
+<h2>Order no. <%= @order.id %></h2>
+
+<% if @order.order_lines.empty? %>
+  <p>Order is empty :(</p>
+<% else %>
+  <h3>Products in order:</h3>
+  <ul>
+    <% @order.order_lines.each do |line| %>
+      <% product = line.product %>
+      <li>
+        id: <strong><%= product.id %></strong>, 
+        name: <strong><%= product.name %></strong>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+<%= link_to "Back to orders list", root_url()%>
