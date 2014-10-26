@@ -1,9 +1,6 @@
-class OrderController < ApplicationController
+class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
-    respond_to do |format|
-      format.html
-      format.json { render json: @order }
-    end
+    render :show
   end
 end
